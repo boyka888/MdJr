@@ -1,0 +1,38 @@
+server:
+  port: 9099
+  undertow:
+    io-threads: 4
+    worker-threads: 20
+    buffer-size: 1024
+    direct-buffers: true
+spring:
+  messages:
+    basename: i18n/messages
+  cache:
+    cache-names: client
+    caffeine:
+      spec: initialCapacity=100,maximumSize=1000
+
+  thymeleaf:
+    cache: true
+  datasource:
+    url: jdbc:mysql://27.102.107.199:3306/md?useUnicode=true&serverTimezone=Asia/Shanghai&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*Mapper.xml
+  typeAliasesPackage: com.md.client.entity
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      column-underline: true
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true

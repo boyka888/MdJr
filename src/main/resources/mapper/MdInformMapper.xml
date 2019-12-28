@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.md.client.mapper.InformMapper">
+
+
+    <select id="selectByType" resultType="com.md.client.entity.Inform">
+        select *
+        from md_inform
+        where new_id = #{newId} and lang = #{lang}
+        order by tdate desc
+        limit #{offset}, #{size}
+    </select>
+
+    <select id="selectTypeId" resultType="com.md.client.entity.Inform">
+        select *
+        from md_inform
+        where type_id = #{typeId} and lang = #{lang}
+    </select>
+
+    <select id="countByType" resultType="integer">
+        select count(*)
+        from md_inform
+        where new_id = #{newId} and lang = #{lang}
+    </select>
+</mapper>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<!--<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>平台简述 - 博纳斯BONUS FINANCE</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="icon" type="image/x-icon" href="http://www.bonusfirm.com/wp-content/themes/bns/img/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://www.bonusfirm.com/wp-content/themes/bns/img/favicon.png" />
+    <link rel="Bookmark" href="http://www.bonusfirm.com/wp-content/themes/bns/img/favicon.png" type="image/x-icon"/>
+    <link href="http://www.bonusfirm.com/wp-content/themes/bns/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://www.bonusfirm.com/wp-content/themes/bns/js/jquery-1.11.3.min.js"></script>
+    <link rel="canonical" href="http://www.bonusfirm.com/about/about-us" />
+</head>-->
+<head th:replace="header :: commonHead('MFF Finance')"></head>
+<body>
+<script type="text/javascript">
+    if (!!window.ActiveXObject || "ActiveXObject" in window)
+        document.write('<div align="center" style="position: fixed;width:100%;height:30px;line-height:30px;background:#0f0;z-index:999;"><p style="font-size:16px;"><b>您正在使用IE为主的浏览器，本站不支持落伍IE浏览器，请使用 chrome 或 浏览器的极速模式浏览。</b></p></div>');</script>
+
+<div class="top_menu">
+    <div class="nav1"><a th:href="@{/index}"><img th:src="@{/img/new/logo.png}" alt="logo"></a></div>
+    <div class="nav2">
+        <ul id="menuid" class="menu">
+            <li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-13"><a href="/" aria-current="page" th:text="${navs[0].title}">首页<span></span></a></li>
+            <li id="menu-item-22" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22"><a href="#" th:text="${navs[1].title}">关于我们<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20"><a href="#" th:text="${navs[2].title}">关于缅甸金融<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-390" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-390"><a th:href="@{/sub/__${navs[3].typeId}__}" th:text="${navs[3].title}">平台简述<span></span></a></li>
+                            <li id="menu-item-41" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a th:href="@{/sub/__${navs[4].typeId}__}" th:text="${navs[4].title}">资金安全<span></span></a></li>
+                            <li id="menu-item-38" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a th:href="@{/sub/__${navs[5].typeId}__}" th:text="${navs[5].title}">技术优势<span></span></a></li>
+                            <!--<li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="#">监管信息<span></span></a></li>-->
+                            <li id="menu-item-36" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a th:href="@{/sub/__${navs[6].typeId}__}" th:text="${navs[6].title}">交易优势<span></span></a></li>
+                            <!--<li id="menu-item-751" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-751"><a href="#">点差对照表<span></span></a></li>-->
+                        </ul>
+                    </li>
+                    <li id="menu-item-197" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-197"><a href="#" th:text="${navs[7].title}">联系我们<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a th:href="@{/sub/__${navs[8].typeId}__}" th:text="${navs[8].title}">客户服务<span></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li id="menu-item-46" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-46"><a href="#" th:text="${navs[9].title}">新闻资讯<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-43" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-43"><a href="#" th:text="${navs[10].title}">新闻动态<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-45" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-45"><a th:href="@{/inform/list/__${navs[11].typeId}__}" th:text="${navs[11].title}">财经评论<span></span></a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-47"><a href="#" th:text="${navs[12].title}">平台活动<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-44" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-44"><a th:href="@{/inform/list/__${navs[13].typeId}__}" th:text="${navs[13].title}">活动公告<span></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="#" th:text="${navs[14].title}">平台公告<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-58" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-58"><a href="#" th:text="${navs[15].title}">平台活动<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57">
+                                <a th:href="@{/inform/list/__${navs[37].typeId}__}" th:text="${navs[37].title}">近期活动<span></span></a></li>
+                            <!--                            <li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#">MT5移动版<span></span></a></li>-->
+                        </ul>
+                    </li>
+                    <li id="menu-item-59" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-59"><a href="#" th:text="${navs[16].title}">平台通知<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-61" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-61">
+                                <a th:href="@{/inform/list/__${navs[38].typeId}__}" th:text="${navs[38].title}">近期通知<span></span></a></li>
+                            <!--<li id="menu-item-613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-613"><a href="#">MT5使用常见问题<span></span></a></li>-->
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-243"><a href="#" th:text="${navs[17].title}">交易产品<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-82" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-82"><a href="#"  th:text="${navs[18].title}">产品类型<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-80" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a th:href="@{/sub/__${navs[19].typeId}__}" th:text="${navs[19].title}">外汇<span></span></a></li>
+                            <li id="menu-item-79" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a th:href="@{/sub/__${navs[20].typeId}__}" th:text="${navs[20].title}">贵金属<span></span></a></li>
+                            <li id="menu-item-81" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a th:href="@{/sub/__${navs[21].typeId}__}" th:text="${navs[21].title}">大宗商品<span></span></a></li>
+                            <li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a th:href="@{/sub/__${navs[22].typeId}__}" th:text="${navs[22].title}">期货<span></span></a></li>
+                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a th:href="@{/sub/__${navs[23].typeId}__}" th:text="${navs[23].title}">数字货币<span></span></a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-85" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-85"><a href="#" th:text="${navs[24].title}">账户类型<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95"><a th:href="@{/sub/__${navs[25].typeId}__}" th:text="${navs[25].title}">标准账户<span></span></a></li>
+                            <li id="menu-item-92" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92"><a th:href="@{/sub/__${navs[26].typeId}__}" th:text="${navs[26].title}">模拟账户<span></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!--<li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-303"><a href="learning-and-research/economic-calendar.html">学习与研究<span></span></a>
+            <ul class="sub-menu">
+                <li id="menu-item-297" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-297"><a href="#">电子书教材<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301"><a target="_blank" href="learning-and-research/basic-knowledge.html">基础知识汇编<span></span></a></li>
+                    <li id="menu-item-298" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298"><a target="_blank" href="learning-and-research/k-line-explaination.html">K线形态详解<span></span></a></li>
+                    <li id="menu-item-300" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300"><a target="_blank" href="learning-and-research/fundamental-analysis.html">基本面分析<span></span></a></li>
+                    <li id="menu-item-302" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-302"><a target="_blank" href="learning-and-research/technical-index-interpretati.html">技术指标解读<span></span></a></li>
+                    <li id="menu-item-299" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-299"><a target="_blank" href="learning-and-research/trading-psychology.html">交易心理塑造<span></span></a></li>
+                </ul>
+            </li>
+                <li id="menu-item-141" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-141"><a href="#">研究工具<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"><a href="learning-and-research/market-quotation.html">行情报价<span></span></a></li>
+                    <li id="menu-item-140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"><a href="learning-and-research/economic-calendar.html">财经日历<span></span></a></li>
+                </ul>
+            </li>
+            </ul>
+            </li>-->
+            <li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-157"><a href="#" th:text="${navs[27].title}">合作共赢<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-158"><a href="#" th:text="${navs[28].title}">介绍经纪商<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-156"><a th:href="@{/sub/__${navs[29].typeId}__}" th:text="${navs[29].title}">品牌合作<span></span></a></li>
+                            <li id="menu-item-155" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-155"><a th:href="@{/sub/__${navs[30].typeId}__}" th:text="${navs[30].title}">合作共赢<span></span></a></li>
+                        </ul>
+                    </li>
+                    <!--<li id="menu-item-184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-184"><a href="#">法律法规<span></span></a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"><a href="#/risk-warning.html">风险提示<span></span></a></li>
+                        <li id="menu-item-177" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177"><a href="#/disclaimer.html">免责声明<span></span></a></li>
+                        <li id="menu-item-824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-824"><a href="#/client-agreement.html">客户协议<span></span></a></li>
+                    </ul>
+                </li>-->
+                </ul>
+            </li>
+            <li id="menu-item-303" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-303"><a href="#" th:text="${navs[31].title}">平台下载<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-297" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-297"><a href="#" th:text="${navs[32].title}">移动端下载<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-301" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301"><a th:text="${navs[33].title}" target="_blank" href="https://download.mql5.com/cdn/mobile/mt4/ios?server=MyanmarFinancial-Demo,MyanmarFinancial-Live">IOS端下载<span></span></a></li>
+                            <li id="menu-item-298" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298"><a th:text="${navs[34].title}" target="_blank" href="https://download.mql5.com/cdn/mobile/mt4/android?server=MyanmarFinancial-Demo,MyanmarFinancial-Live">Android端下载<span></span></a></li>
+                        </ul>
+                    </li>
+                    <li id="menu-item-141" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-141"><a th:text="${navs[35].title}" href="">电脑端下载<span></span></a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"><a th:text="${navs[36].title}" href="https://download.mql5.com/cdn/web/15370/mt4/myanmarfinancial4setup.exe">PC端下载<span></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!--<li id="menu-item-182" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-303"><a href="#">在线开户<span></span></a>
+
+            </li>-->
+
+        </ul>    </div>
+    <div class="nav3">
+        <div class="user"><span><a th:text="${contents[10].title}" href="http://crm.mffeex.com/public/register?l=en-us" target="_blank">在线开户</a></span></div>
+        <div class="lang">
+            <form class="form-horizontal">
+                <div class="form-group">
+
+                    <div id="flagstrap"></div>
+                </div>
+            </form>
+        </div>
+
+        <!--<div class="user"><span><a href="http://user.bonusfirm.com/public/register?fromuser=3" target="_blank">用户注册</a> / <a href="http://user.bonusfirm.com/" target="_blank">客户登陆</a></span></div>-->
+        <!--<div class="lang">
+
+            <a href="en/">English<span class="triangle-down"></span></a><br/><a href="">简体中文</a>
+        </div>-->
+    </div>
+</div>
+
+<div class="menum">
+    <div class="div1">缅甸金融</div>
+    <div class="div2">
+        <div class="l"><div class="mobile_menu_button"><i></i><i></i><i></i></div></div>
+        <div class="r"><span>语言</span>
+            <!--<ul><li><a href="">简体中文</a></li><li><a href="">English</a></li></ul>-->
+        </div>
+    </div>
+</div><div class="clearfix"></div>
+
+<div class="mobile_menu hidden-lg">
+    <div class="menu_header_inner" >
+        <div class="main_menu_header"><span>缅甸金融</span></div>
+        <div class="sub_menu_header"><a class="back_arrow" href="#">&lt;&lt; 返回</a></div>
+        <div class="subsub_menu_header"><a class="back_arrow" href="#">&lt;&lt; 返回</a></div>
+    </div>
+    <ul id="mobleid" class="small_menu"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-13"><a th:href="@{/index}" th:text="${navs[0].title}" aria-current="page">首页</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-22"><a href="#" th:text="${navs[1].title}">关于我们</a>
+            <ul class="sub-menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20"><a href="#" th:text="${navs[2].title}">关于缅甸金融</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-390"><a th:href="@{/sub/__${navs[3].typeId}__}" th:text="${navs[3].title}">平台简述</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a th:href="@{/sub/__${navs[4].typeId}__}" th:text="${navs[4].title}">资金安全</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38"><a th:href="@{/sub/__${navs[5].typeId}__}" th:text="${navs[5].title}">技术优势</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36"><a th:href="@{/sub/__${navs[6].typeId}__}" th:text="${navs[6].title}">交易优势</a></li>
+                        <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-751"><a href="#">点差对照表</a></li>-->
+                        <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="#">监管信息</a></li>-->
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-197"><a href="#" th:text="${navs[7].title}">联系我们</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><a th:href="@{/sub/__${navs[8].typeId}__}" th:text="${navs[8].title}">客户服务</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-46"><a href="#" th:text="${navs[9].title}">新闻资讯</a>
+            <ul class="sub-menu">
+                <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-43"><a href="#" th:text="${navs[10].title}">新闻动态</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-45"><a th:href="@{/inform/list/__${navs[11].typeId}__}" th:text="${navs[11].title}">财经评论</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-47"><a href="#" th:text="${navs[12].title}">平台活动</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-44"><a th:href="@{/inform/list/__${navs[13].typeId}__}" th:text="${navs[13].title}">活动公告</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-55"><a href="#" th:text="${navs[14].title}">平台公告</a>
+            <ul class="sub-menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-58"><a href="#" th:text="${navs[15].title}">近期活动</a>
+                    <!--<ul class="sub-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="#">MT4电脑版</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="#">MT4移动版</a></li>
+                    </ul>-->
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-59"><a href="#" th:text="${navs[16].title}">平台介绍</a>
+                    <!--<ul class="sub-menu">
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-61"><a href="#">MT5使用教程</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-613"><a href="#">MT5使用常见问题</a></li>
+                    </ul>-->
+                </li>
+            </ul>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-243"><a href="#" th:text="${navs[17].title}">交易产品</a>
+            <ul class="sub-menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-82"><a href="#" th:text="${navs[18].title}">产品类型</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80"><a th:href="@{/sub/__${navs[19].typeId}__}" th:text="${navs[19].title}">外汇</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-79"><a th:href="@{/sub/__${navs[20].typeId}__}" th:text="${navs[20].title}">贵金属</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-81"><a th:href="@{/sub/__${navs[21].typeId}__}" th:text="${navs[21].title}">大宗商品</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a th:href="@{/sub/__${navs[22].typeId}__}" th:text="${navs[22].title}">期货</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-77"><a th:href="@{/sub/__${navs[23].typeId}__}" th:text="${navs[23].title}">数字货币</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-85"><a href="#" th:text="${navs[24].title}">账户类型</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95"><a href="#" th:text="${navs[25].title}">标准账户</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92"><a href="#" th:text="${navs[26].title}">模拟账户</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!--<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-303"><a href="learning-and-research/economic-calendar">学习与研究</a>
+        <ul class="sub-menu">
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-297"><a href="#">电子书教材</a>
+            <ul class="sub-menu">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-301"><a target="_blank" href="learning-and-research/basic-knowledge">基础知识汇编</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-298"><a target="_blank" href="learning-and-research/k-line-explaination">K线形态详解</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300"><a target="_blank" href="learning-and-research/fundamental-analysis">基本面分析</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-302"><a target="_blank" href="learning-and-research/technical-index-interpretati">技术指标解读</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-299"><a target="_blank" href="learning-and-research/trading-psychology">交易心理塑造</a></li>
+            </ul>
+        </li>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-141"><a href="#">研究工具</a>
+            <ul class="sub-menu">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"><a href="learning-and-research/market-quotation">行情报价</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-140"><a href="learning-and-research/economic-calendar">财经日历</a></li>
+            </ul>
+        </li>
+        </ul>
+        </li>-->
+        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-157"><a href="#" th:text="${navs[27].title}">合作共赢</a>
+            <ul class="sub-menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-158"><a href="#" th:text="${navs[28].title}">介绍经纪商</a>
+                    <ul class="sub-menu">
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-156"><a th:href="@{/sub/__${navs[29].typeId}__}" th:text="${navs[29].title}">品牌合作</a></li>
+                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-155"><a th:href="@{/sub/__${navs[30].typeId}__}" th:text="${navs[30].title}">合作共赢</a></li>
+                    </ul>
+                </li>
+                <!--<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-184"><a href="#">法律法规</a>
+                <ul class="sub-menu">
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182"><a href="#/risk-warning">风险提示</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-177"><a href="#/disclaimer">免责声明</a></li>
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-824"><a href="#/client-agreement">客户协议</a></li>
+                </ul>
+            </li>-->
+            </ul>
+        </li>
+    </ul></div>
+<script type="text/javascript">
+    $(function(){
+        $('.menum .div2 .r').on('click',function(){
+            jQuery(this).parent().find('ul:first').slideToggle(300);
+        });
+    });
+</script>
+<div class="subg"><div class="subanner gs"><div class="bg"></div>
+    <div class="content">
+        <p class="p1" th:text="${subModel.title}">平台简述</p>
+        <span class="p2" th:text="${subModel.subTitle}">最经典的历史，最传奇的故事，最精彩的缅甸金融期货交易所Myanmar Financial Futures Exchange；你想了解的都在这里，我们永远欢迎您。</span>
+    </div>
+</div></div>
+<div class="position">
+    <div class="site"><a class="home" href="#"></a> > <span th:text="${subModel.title}"></span> </div>
+</div><div class="con_main">
+    <div class="sidebar">
+        <div class="sidebar_l">    <div class="box">
+            <ul id="menuid" class="menu" >
+                <li id="menu-item-187" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-187"><a href="#" th:text="${subModel.leftTitle}">关于我们</a>
+                <ul class="sub-menu" th:each="left,stat : ${subModel.left}">
+                    <li id="menu-item-241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-241"><a th:href="@{/sub/__${left.typeId}__}" aria-current="page" th:text="${left.title}">平台简述</a></li>
+                    <!--<li id="menu-item-191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-191"><a href="#">资金安全</a></li>
+                    <li id="menu-item-189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189"><a href="#">技术优势</a></li>
+                    <li id="menu-item-190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-190"><a href="#">监管信息</a></li>
+                    <li id="menu-item-188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-188"><a href="#">交易优势</a></li>
+                    <li id="menu-item-752" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-752"><a href="#">点差对照表</a></li>-->
+                </ul>
+            </li>
+                <li id="menu-item-196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-196"><a href="#" th:text="${subModel.rightTitle}">联系我们</a>
+                    <ul class="sub-menu" th:each="right : ${subModel.right}">
+                        <li id="menu-item-192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-192"><a th:href="@{/sub/__${right.typeId}__}" th:text="${right.title}">客户服务</a></li>
+                    </ul>
+                </li>
+            </ul>    </div>
+            <div class="sort_zs">
+                <img th:src="@{/img/new/zs_bg.png}">
+                <div class="content" th:utext="${contents[8].content}">
+                    <a href="#" target="_blank">注册真实帐户</a>
+                    <p>您只需开启一个账户<br />便可以投资全球产品</p>
+                </div>
+            </div>
+            <!--<div class="sort_mn" style="display:none;">
+                <img src="http://www.bonusfirm.com/wp-content/themes/bns/img/zs_bg.jpg">
+                <div class="content">
+                    <a href="https://yoonit-bonus.azurewebsites.net/demo-account.aspx" target="_blank">注册模拟帐户</a>
+                    <p>高达50,000美元的<br/>模拟练习账户</p>
+                </div>
+            </div>-->
+            <div class="sort_nowtime">
+                <h3 th:text="${contents[9].content}">最新活动</h3>
+                <ul th:each="new1 : ${news1}">
+                    <li><a th:href="@{/inform/__${new1.typeId}__}" th:text="${new1.title}"  target="_blank">美联储褐皮书称将维持目前经济增速至明年 前景乐观</a><p th:text="${new1.tdate}">2019-11-28</p></li>
+                    <!--<li><a href="#" target="_blank">渣打:料美联储12月会议维持利率不变 明年仍按兵不动</a><p>2019-11-28</p></li>
+                    <li><a href="#" target="_blank">美联储降息预期减弱 2020年美国大选因素不容忽视</a><p>2019-11-27</p></li>
+                    <li><a href="#" target="_blank">美国民调：仍有近半数受访者希望特朗普被弹劾并免职</a><p>2019-11-27</p></li>-->
+                </ul>
+            </div></div>
+        <div class="sidebar_r">
+            <div class="content">
+                <div class="about" th:utext="${subModel.content}">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="foot">
+        <div th:utext="${contents[6].content}" class="foottop">
+            <div class="div1">致力于为全球投资者提供服务</div>
+            <div class="div2"><a class="a1" href="#" target="_blank">注册真实账户</a>
+                <a class="a2" href="#" target="_blank">注册模拟账户</a></div>
+        </div>
+    </div>
+    <div class="foot2">
+        <div class="picScroll">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <a class="prev"></a>
+            <a class="next"></a>
+        </div>
+    </div>
+    <div class="foot3">
+        <div class="footmenu">
+            <ul id="menuid1" class="menu"><li id="menu-item-357" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-357"><a href="#" th:text="${navs[1].title}">关于我们<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-365" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-365"><a th:href="@{/sub/__${navs[3].typeId}__}" th:text="${navs[3].title}">平台简述<span></span></a></li>
+                    <li id="menu-item-366" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-366"><a th:href="@{/sub/__${navs[8].typeId}__}" th:text="${navs[8].title}">客户服务<span></span></a></li>
+                </ul>
+            </li>
+                <li id="menu-item-358" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-358"><a href="#" th:text="${navs[9].title}">新闻资讯<span></span></a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-367" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-367"><a href="#" th:text="${navs[10].title}">新闻动态<span></span></a></li>
+                        <li id="menu-item-368" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-368"><a th:href="@{/inform/list/__${navs[11].typeId}__}" th:text="${navs[11].title}">财经评论<span></span></a></li>
+                    </ul>
+                </li>
+                <li id="menu-item-359" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-359"><a href="#" th:text="${navs[14].title}">平台公告<span></span></a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-369" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-369"><a href="#" th:text="${navs[15].title}">近期活动<span></span></a></li>
+                        <li id="menu-item-370" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-370"><a href="#" th:text="${navs[16].title}">平台介绍<span></span></a></li>
+                    </ul>
+                </li>
+                <li id="menu-item-360" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-360"><a href="#" th:text="${navs[17].title}">交易产品<span></span></a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-372" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-372"><a href="#" th:text="${navs[18].title}">产品类型<span></span></a></li>
+                        <li id="menu-item-371" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-371"><a href="#" th:text="${navs[24].title}">账户类型<span></span></a></li>
+                    </ul>
+                </li>
+                <!--&lt;!&ndash;<li id="menu-item-361" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-361"><a href="#">学习与研究<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-373" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-373"><a href="learning-and-research/basic-knowledge.html">电子书教材<span></span></a></li>
+                    <li id="menu-item-374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-374"><a href="learning-and-research/economic-calendar.html">研究工具<span></span></a></li>
+                </ul>
+                </li>&ndash;&gt;-->
+                <li id="menu-item-362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-362"><a href="#" th:text="${navs[27].title}">合作共赢<span></span></a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-375"><a href="#" th:text="${navs[28].title}">介绍经纪商<span></span></a></li>
+                        <li id="menu-item-827" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-827"><a th:href="@{/sub/__${navs[29].typeId}__}" th:text="${navs[29].title}">品牌合作<span></span></a></li>
+                    </ul>
+                </li>
+                &lt;!&ndash;<!--<li id="menu-item-830" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-830"><a href="#">法律法规<span></span></a>
+                <ul class="sub-menu">
+                    <li id="menu-item-825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-825"><a href="#">客户协议<span></span></a></li>
+                    <li id="menu-item-826" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-826"><a href="#">免责声明<span></span></a></li>
+                </ul>
+                </li>&ndash;&gt;-->
+            </ul>		</div>
+        <div class="aa"></div>
+        <p th:utext="${contents[7].content}">风险提示：我们在此提醒您，外汇保证金交易存在高风险, 可能不适合每一位投资者. 申请并订立任何外汇保证金交易和差价合约前, 您应该谨慎考虑您的目标, 财务状况, 需求和经验水平, 并在必要时咨询独立的专业顾问. 外汇保证金和差价合约杠杆的作用是放大您的盈利和损失.  在正式交易前请确保您完全理解存在的风险, 包括本金亏损可能远高于您最初的投入, 如无法承担损失, 请不要贸然投资，等您充分了解潜在的风险后再决定交易。</p>
+    </div>
+    <div class="foot4">
+        <p>Copyright 2018 - 2019 MFF Financial All Rights Reserved.  版权所有</p>
+    </div>
+</div>
+<!--<div class="float">
+    <div class="div goto"><a href="#"><span class="span1"></span></a></div>
+    &lt;!&ndash;<div class="div hiddle"><a href="#" target="_blank"><span class="span2"></span></a></div>
+    <div class="div hiddle">
+        &lt;!&ndash; <a href="platform/mt4-pc/" target="_blank"> &ndash;&gt;
+        <a href="soft/mt5.exe" target="_blank">
+        <span class="span3"></span></a></div>&ndash;&gt;
+    &lt;!&ndash;<div class="div divkf hiddle"><span class="span4"></span>
+        <div class="kf">
+            <a href="#" target="_blank">在线客服</a>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=0000000000&site=qq&menu=yes" target="_blank">在线客服</a>
+        </div>
+    </div>
+    <div class="div hiddle"><a><span class="span5"></span></a><div class="er"><img src="img/weixin.png" alt="微信公众号"></div></div>&ndash;&gt;
+    <div class="div gb"><a href=""><span class="span6"></span></a></div>
+</div>
+<div class="bottom_menu">
+    &lt;!&ndash;<div class="div"><a href="#" target="_blank"><span class="span2"></span>&nbsp;登录账户</a></div>
+    <div class="div"><a href="#"><span class="span3"></span>&nbsp;在线客户</a></div>&ndash;&gt;
+    <div class="div goto"><a href=""><span class="span4"></span>&nbsp;返回顶部</a></div>
+</div>-->
+
+</body>
+<script type="text/javascript" th:src="@{/js/jquery.flagstrap.js}"></script>
+<script type="text/javascript" th:src="@{/fx/jquery.SuperSlide.2.1.2.js}"></script>
+<script type="text/javascript" th:src="@{/js/index.js}"></script>
+<script>
+    $('#flagstrap').flagStrap({
+                                  countries: {
+                                      "CN": "中文",
+                                      "en": "English",
+                                      "TW": "Taiwan",
+                                      "JP":"Japan",
+                                      "KR":"Korea",
+                                      "VN": "Viet Nam",
+                                      "TH": "Thailand",
+                                      "MM": "Myanmar",
+                                      "MY": "Malaysia",
+                                      "ID": "Indonesia",
+                                      "ES": "Spain",
+                                      "DE": "Germany",
+                                      "FR": "France",
+                                      "IT": "Italy",
+                                      "RU": "Russian"
+                                  },
+
+                                  onSelect: function(value, text, element) {
+
+                                      localStorage.setItem("lang", value);
+                                      localStorage.setItem("text", text);
+                                      $.get('/lang?lang=' + value, function (result) {
+                                          window.location.reload();
+                                      });
+                                  },
+                                  placeholder: {
+                                      value: "",
+                                      text: ""
+                                  }
+                              });
+</script>
+</html>

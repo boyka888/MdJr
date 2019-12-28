@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.md.client.mapper.SysVarMapper">
+
+    <select id="selectByVarName" resultType="com.md.client.entity.SysVar">
+        select *
+        from md_sys_var
+        where var_name = #{varName} limit 1
+    </select>
+
+</mapper>

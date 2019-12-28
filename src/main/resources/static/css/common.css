@@ -1,0 +1,97 @@
+.live {
+    overflow: hidden;
+}
+.live > li {
+    list-style: none;
+    position: relative;
+    padding: 0 0 0 2em;
+    margin: 0 0 .5em 10px;
+    font-size: 20px;
+    -webkit-transition: .12s;
+    transition: .12s;
+}
+.live > li::before {
+    position: absolute;
+    content: '\2022';
+    font-family: Arial;
+    color: #FFF;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 2em;
+    opacity: .5;
+    line-height: .75;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.live > li:hover {
+    color: #FFF;
+}
+.live > li:hover::before {
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+    opacity: 1;
+    text-shadow: 0 0 4px;
+    -webkit-transition: .1s;
+    transition: .1s;
+}
+
+.fadeInRightBig .item1{
+    font-size: 40px;
+    text-align: center;
+}
+
+.fadeInRightBig .item2{
+    font-size: 30px;
+    background: transparent
+}
+
+.fadeInRightBig .showbtn{
+    padding: 15px 20px;font-size: 22px;color: #fff;background: linear-gradient(#4886FF, #33B1FA);border-radius: 5px;
+}
+
+
+.pc {
+    overflow: hidden;
+}
+.pc > li {
+    list-style: circle;
+    position: relative;
+    text-align: left;
+    padding: 0 0 0 2em;
+    margin: 0 0 .5em 10px;
+    font-size: 20px;
+    -webkit-transition: .12s;
+    transition: .12s;
+}
+.pc > li > span{
+    font-size: 14px;
+    line-height: 45px;
+}
+.pc > li::before {
+    position: absolute;
+    content: '\2022';
+    font-family: Arial;
+    color: #143666;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 2em;
+    opacity: .5;
+    line-height: .75;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.pc > li:hover {
+    color: #143666;
+}
+.pc > li:hover::before {
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+    opacity: 1;
+    text-shadow: 0 0 4px;
+    -webkit-transition: .1s;
+    transition: .1s;
+}

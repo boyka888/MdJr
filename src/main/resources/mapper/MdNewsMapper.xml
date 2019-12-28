@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.md.client.mapper.NewsMapper">
+
+    <select id="selectTextOne" resultType="com.md.client.entity.News">
+        select *
+        from md_news
+        where title = 'text' and lang = #{lang} and type = #{type}
+        limit 1
+    </select>
+
+    <select id="selectByParentId" resultType="com.md.client.entity.News">
+        select *
+        from md_news
+        where parent_id = #{parentId} and lang = #{lang}
+        <if test="type != null ">
+            and type = #{type}
+        </if>
+    </select>
+
+    <select id="selectNav" resultType="com.md.client.entity.News">
+        select *
+        from md_news
+        where type = 'index' and lang = #{lang}
+    </select>
+    
+    <select id="selectContent" resultType="com.md.client.entity.News">
+        SELECT *
+        FROM md_news
+        WHERE parent_id = 1 and type = 'content' and lang = #{lang}
+        ORDER BY sort ASC;
+    </select>
+
+    <select id="selectTypeId" resultType="com.md.client.entity.News">
+        select *
+        from md.md_news mn
+        where type_id = #{typeId} and lang = #{lang}
+    </select>
+</mapper>
