@@ -366,8 +366,51 @@
 		</div>
 	</div>
 
-
 	<div class="index4">
+		<div class="half" style="width: 100%">
+			<div class="div1" th:text="${navs[9].title}">新闻资讯</div>
+			<div class="div2">
+				<div class="div">
+					<div class="title"><a href="#" th:text="${navs[11].title}" target="_blank">新闻动态</a><span class="title-border"></span></div>
+					<ul th:each="new1 : ${news1}">
+						<li><a th:href="@{/inform/__${new1.typeId}__}" th:text="${new1.title}">美联储褐皮书称将维持目前经济增速至明年 前景乐观<br/>
+						</a><p th:text="${new1.tdate}">2019-11-28</p></li>
+					</ul>
+				</div>
+				<div class="div">
+					<div class="title"><a href="#" th:text="${navs[13].title}" target="_blank">财经评论</a><span class="title-border"></span></div>
+					<ul th:each="new2 : ${news2}">
+						<li><a th:href="@{/inform/__${new2.typeId}__}" th:text="${new2.title}">美联储褐皮书称将维持目前经济增速至明年 前景乐观<br/></a>
+							<p th:text="${new2.tdate}">2019-11-28</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="half" style="width: 100%">
+			<div class="div1" th:text="${navs[14].title}">平台公告</div>
+			<div class="div2">
+				<div class="div">
+					<div class="title"><a href="#" th:text="${navs[37].title}" target="_blank">近期活动</a><span class="title-border"></span></div>
+					<ul th:each="plat1 : ${plats1}">
+						<li><a th:href="@{/inform/__${plat1.typeId}__}" th:text="${plat1.title}">交易者体验活动<br/></a>
+							<p th:text="${plat1.tdate}">2019-01-04</p>
+						</li>
+					</ul>
+				</div>
+				<div class="div">
+					<div class="title"><a href="#" th:text="${navs[38].title}" target="_blank">近期通知</a><span class="title-border"></span></div>
+					<ul th:each="plat2 : ${plats2}">
+						<li><a th:href="@{/inform/__${plat2.typeId}__}" th:text="${plat2.title}">交易者体验活动<br/></a>
+							<p th:text="${plat2.tdate}">2019-01-04</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--<div class="index4">
 		<div class="half">
 			<div class="div1" th:text="${navs[9].title}">新闻资讯</div>
 			<div class="div2">
@@ -409,7 +452,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>-->
 
 </div>
 <!--<div  th:replace="header :: footer">
